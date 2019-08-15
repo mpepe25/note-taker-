@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>NoteTaker</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./asset/css/style.css">
+  <style media="screen"></style>
+</head>
+
+<body>
+  <h1> Note Taker App</h1>
+
+  <div class="container">
+
+    <form action="/api/notes" method="POST" id="Form1"></form>
+    <form action="/api/delete" method="POST" id="Form2"></form>
+
+    <div id="user-input">
+      <p>Title</p>
+      <input type="text" id="title" name="title" form="Form1"/>
+      <br>
+      <p>Note</p>
+      <textarea id="note" name="body" form="Form1"></textarea>
+      <div id="buttons">
+        <div id="action-button">
+          <button id="make-new" type="submit" form="Form1">Submit</button>
+        </div>
+        <button id="clear-all" type="submit" form="Form2">Delete All Notes</button>
+        <!-- <div class="pic">
+          <img src="./asset/img/style.jpeg" class="style">
+          <div id="backpic"></div> -->
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div id="results"></div>
+
+
+  </div>
+  <script src="./asset/js/notes.js"></script>
+</body>
