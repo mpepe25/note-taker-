@@ -18,10 +18,18 @@ var model = {
       cb(res);
     });
   },
+
   delete: function(condition, cb) {
     orm.delete("notes", condition, function(res) {
       cb(res);
     });
+
+    // delete: function(cb){
+    //   orm.deletecurrent("notes", function (res){
+    //     cb(res)
+    //   })
+    // }
+  
   },
   deleteAll: function(cb){
     orm.deleteAll("notes", function(res){
