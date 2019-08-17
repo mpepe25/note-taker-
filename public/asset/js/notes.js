@@ -59,6 +59,16 @@ $("#delete").on("click", function () {
     });
 });
 
+$(document).on('click', "#current-statement" ,function(event){
+    $.ajax({
+        url: 'api/remove',
+        type: "DELETE"
+    
+    }).then(function (){
+        location.reload();
+    })
+})
+
 
 // When user click's on note title, show the note, and allow for updates
 $(document).on("click", ".dataTitle", function () {

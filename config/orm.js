@@ -88,19 +88,18 @@ var orm = {
       cb(result);
     });
   },
-  delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
 
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
+  deletecurrent: function(cb) {
+    connection.query('select MAX(id) FROM notes AS id', function (err, data){
+      var MAxID = data[0]['MAX(id)'];
+      console.log(data);
+      console.log(MAxID);
+      connection.query("DELETE FROM notes WHERE id ="+ MAxID, function (error, items){
+        cb(items);
+      });
     });
   },
+
   deleteAll: function(table, cb){
     var queryString = "DELETE FROM ??";
     var data = [table];

@@ -50,4 +50,13 @@ router.post("/api/delete", function(req, res) {
     res.redirect("/")
   })
 });
+
+router.delete('/api/remove', function(req, res){
+  model.delete(function (resp){
+    res.end();
+  })
+})
+
+
+
 module.exports = router;
